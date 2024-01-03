@@ -12,7 +12,7 @@ class ProductDetailBase(BaseModel):
     description: str | None = None
     camera: str | None = None
     camera_self: str | None = None
-    battery: str | None = None
+    battery: int | None = None
     card: str | None = None
     video: str | None = None
     chip: str | None = None
@@ -33,7 +33,7 @@ class ProductDetailResponse(BaseModel):
     description: str | None = None
     camera: str | None = None
     camera_self: str | None = None
-    battery: str | None = None
+    battery: int | None = None
     card: str | None = None
     video: str | None = None
     chip: str | None = None
@@ -53,7 +53,7 @@ class ProductDetailUpdate(BaseModel):
     description: str | None = None
     camera: str | None = None
     camera_self: str | None = None
-    battery: str | None = None
+    battery: int | None = None
     card: str | None = None
     video: str | None = None
     chip: str | None = None
@@ -86,7 +86,7 @@ class ProductDetailResponseAll(BaseModel):
     description: str | None = None
     camera: str | None = None
     camera_self: str | None = None
-    battery: str | None = None
+    battery: int | None = None
     card: str | None = None
     video: str | None = None
     chip: str | None = None
@@ -98,4 +98,3 @@ class ProductDetailResponseAll(BaseModel):
     class Config:
         orm_mode = True
 
-  

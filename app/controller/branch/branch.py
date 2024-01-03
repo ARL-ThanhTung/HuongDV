@@ -3,6 +3,7 @@ import logging
 from fastapi_sqlalchemy import db
 from sqlalchemy import and_
 logger = logging.getLogger()
+import json
 from typing import List
 from sqlalchemy.orm import Session
 from app.db.base import get_db
@@ -11,13 +12,13 @@ router = APIRouter()
 from fastapi.encoders import jsonable_encoder
 from datetime import date
 from sqlalchemy import and_
-
+from fastapi.responses import ORJSONResponse
 from app.schema.branch.branch import BranchRequest , BranchResponse , BranchUpdate 
 from app.model.base import Branch
 
 # Get All 
 @router.get(
-    "" ,  response_model=List[BranchResponse]
+    "" , response_model=List[BranchResponse] 
 )
 def get(  
     db: Session = Depends(get_db)

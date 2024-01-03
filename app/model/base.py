@@ -8,12 +8,14 @@ class Category(Base):
     __tablename__ = "Category"
     id = Column(Integer, primary_key=True, autoincrement=True, index=True)
     name = Column(String , nullable=True, default=None) 
+    #image = Column(String , nullable=True, default=None) 
     product = relationship("Product" , back_populates="category")
 
 class Branch(Base):
     __tablename__ = "Branch"
     id = Column(Integer, primary_key=True, autoincrement=True, index=True)
     name = Column(String , nullable=True, default=None) 
+    image = Column(String , nullable=True, default=None) 
     product = relationship("Product" , back_populates="branch")
 
 class Product(Base):
